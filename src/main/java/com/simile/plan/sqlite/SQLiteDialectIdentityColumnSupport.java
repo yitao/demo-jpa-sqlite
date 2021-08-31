@@ -8,8 +8,8 @@ import org.hibernate.dialect.identity.IdentityColumnSupportImpl;
  * @Author yitao
  * @Created 2021/08/26
  */
-
 public class SQLiteDialectIdentityColumnSupport extends IdentityColumnSupportImpl {
+
 	public SQLiteDialectIdentityColumnSupport(Dialect dialect) {
 		super();
 	}
@@ -21,8 +21,6 @@ public class SQLiteDialectIdentityColumnSupport extends IdentityColumnSupportImp
 
 	@Override
 	public boolean hasDataTypeInIdentityColumn() {
-		// As specified in NHibernate dialect
-		// FIXME true
 		return false;
 	}
 
@@ -33,8 +31,6 @@ public class SQLiteDialectIdentityColumnSupport extends IdentityColumnSupportImp
 
 	@Override
 	public String getIdentityColumnString(int type) {
-		// return "integer primary key autoincrement";
-		// FIXME "autoincrement"
 		return "integer";
 	}
 }

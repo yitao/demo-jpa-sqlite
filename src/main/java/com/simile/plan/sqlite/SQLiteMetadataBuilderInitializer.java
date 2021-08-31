@@ -13,7 +13,8 @@ import org.hibernate.engine.jdbc.dialect.spi.DialectResolver;
 import org.jboss.logging.Logger;
 
 /**
- * SQLite工具
+ * @Author yitao
+ * @Created 2021/08/26
  */
 public class SQLiteMetadataBuilderInitializer implements MetadataBuilderInitializer {
 
@@ -32,9 +33,9 @@ public class SQLiteMetadataBuilderInitializer implements MetadataBuilderInitiali
 		((DialectResolverSet) dialectResolver).addResolver(resolver);
 	}
 
-	static private final SQLiteDialect dialect = new SQLiteDialect();
+	private static final SQLiteDialect dialect = new SQLiteDialect();
 
-	static private final DialectResolver resolver = (DialectResolver) info -> {
+	private static final DialectResolver resolver = (DialectResolver) info -> {
 		if (info.getDatabaseName().equals("SQLite")) {
 			return dialect;
 		}
