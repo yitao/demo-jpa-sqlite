@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:./data/plan-jpa-sqlite.db
+    username:
+    password:
+  ### sqlite需要自己配置连接方式
+  jpa:
+    database-platform: com.simile.plan.sqlite.SQLiteDialect #自己配置的方言
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  thymeleaf:
+    cache: false
+  devtools:
+    livereload:
+      enabled: true
